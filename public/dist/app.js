@@ -28,19 +28,19 @@ let routes =
     }
   },
     {
-      route: "/subject/add",
-        options:
-            {
-                templateUrl: "subject/add",
-                controller: "AddSubject"
-            }
-    },
-    {
         route: "/subjects",
         options:
             {
                 templateUrl : "subject/all",
                 controller: "Subjects"
+            }
+    },
+    {
+        route: "/students",
+        options:
+            {
+                templateUrl : "student/all",
+                controller: "Students"
             }
     }
 ];
@@ -94,6 +94,26 @@ app.service('$requests', function ($http) {
 
 
 });
+app.service("students", function ($requests) {
+
+    this.all = function (callback) {
+        $requests.get("api/students", function (data) {
+            callback(data.data);
+        })
+    };
+
+    this.delete = function (id,callback) {
+        $requests.get("api/student/"+id+"/delete", function () {
+            callback();
+        })
+    };
+
+    this.add = function (data,callback) {
+        $requests.post('/api/student/add',data, function (data) {
+            callback(data);
+        });
+    }
+});
 app.service("subjects", function ($requests) {
 
     this.all = function (callback) {
@@ -107,23 +127,19 @@ app.service("subjects", function ($requests) {
             callback();
         })
     };
+    this.add = function (data,callback) {
+        $requests.post('/api/subject/add',data, function (data) {
+            callback(data);
+        });
+    }
 });
 
 app.controller("Main", function ($scope) {
 
 });
 
-app.controller("AddSubject", function ($scope,$requests) {
 
-    $scope.submit = function (form){
-        console.log(form);
-        $requests.post('/api/subject/add',form, function (data) {
-            console.log(data);
-        })
-    }
-});
-
-app.controller("Subjects", function ($scope,subjects) {
+app.controller("Subjects", function ($scope,subjects,$requests) {
     let update =  ()=>{
         subjects.all((data)=>{
             $scope.subjects = data;
@@ -135,6 +151,41 @@ app.controller("Subjects", function ($scope,subjects) {
            update();
        });
 
+    };
+
+    update();
+
+    $scope.submit = function (form){
+        subjects.add(form, function (data) {
+            update();
+        });
+    }
+
+});
+
+app.controller("Students", function ($scope,students,subjects) {
+    subjects.all((data)=>{
+        $scope.subjects = data;
+    });
+    let update =  ()=>{
+        students.all((data)=>{
+            $scope.students = data;
+        });
+    };
+
+    $scope.delete = (id) =>{
+        students.delete(id,()=>{
+            update();
+        });
+
+    };
+    $scope.submit = (data)=>{
+        console.log(data);
+    };
+    $scope.submit = function (form){
+        students.add(form, function (data) {
+            update();
+        });
     };
 
     update();

@@ -9,19 +9,19 @@ let routes =
     }
   },
     {
-      route: "/subject/add",
-        options:
-            {
-                templateUrl: "subject/add",
-                controller: "AddSubject"
-            }
-    },
-    {
         route: "/subjects",
         options:
             {
                 templateUrl : "subject/all",
                 controller: "Subjects"
+            }
+    },
+    {
+        route: "/students",
+        options:
+            {
+                templateUrl : "student/all",
+                controller: "Students"
             }
     }
 ];

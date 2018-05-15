@@ -1,0 +1,25 @@
+.card{
+  h1{
+    font-size:1.5em;
+    margin:10px 0px;
+  }
+  box-shadow: box-shadow('soft');
+  padding: 12px 24px;
+  margin:10px;
+  border-radius: 2px;
+  background-color: tint($color_4_base,90);
+  transition: all 0.2s ease-in-out;
+  &:hover, &:active {
+    box-shadow: box-shadow('medium');
+    background-color: tint($color_4_base,80);
+  }
+  .card-footer{
+    @extend .grid;
+    .card-footer-left{
+      @extend .g-8;
+    }
+    .card-footer-right{
+      @extend .g-4;
+    }
+  }
+}

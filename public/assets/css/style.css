@@ -7,7 +7,7 @@
 /** Media query */
 @import url(vendor/normalize.css);
 @import url(https://fonts.googleapis.com/css?family=Lato:100,300,900);
-.grid, .boxes, .navbar, .select a {
+.grid, .card .card-footer, .boxes, .navbar, .select a {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-auto-flow: row; }
@@ -54,7 +54,7 @@ button {
 .g-3 {
   grid-column: span 3; }
 
-.g-4, header .header-title, .boxes .box {
+.g-4, header .header-title, .boxes .box, .card .card-footer .card-footer-right {
   grid-column: span 4; }
 
 .g-5 {
@@ -66,7 +66,7 @@ button {
 .g-7 {
   grid-column: span 7; }
 
-.g-8, nav {
+.g-8, nav, .card .card-footer .card-footer-left {
   grid-column: span 8; }
 
 .g-9 {
@@ -187,6 +187,9 @@ input {
 label {
   display: block; }
 
+.block {
+  display: block; }
+
 .navbar {
   grid-column-gap: 1%;
   font-size: 1.2em; }
@@ -286,5 +289,19 @@ label {
   transform: translate(-50%, -50%);
   background-color: white;
   z-index: 15; }
+
+.card {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  padding: 12px 24px;
+  margin: 10px;
+  border-radius: 2px;
+  background-color: #eff2f2;
+  transition: all 0.2s ease-in-out; }
+  .card h1 {
+    font-size: 1.5em;
+    margin: 10px 0px; }
+  .card:hover, .card:active {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    background-color: #dfe6e4; }
 
 /*# sourceMappingURL=style.css.map */

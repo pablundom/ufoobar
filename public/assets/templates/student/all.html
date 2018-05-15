@@ -1,0 +1,44 @@
+<h1>Estudiantes</h1>
+
+<a class="block button" href="#" ng-click="addStudent=!addStudent">Añadir Estudiante</a>
+<form ng-model="data" ng-show="addStudent" ng-submit="submit(data);addStudent=false;data={};">
+    <label>Nombre</label>
+    <input ng-model="data.name" autocomplete="given-name" type="text" name="name" required />
+    <label>Apellidos</label>
+    <input ng-model="data.surnames" autocomplete="family-name" type="text" name="surnames" required />
+    <label>DNI</label>
+    <input ng-model="data.dni" type="text" name="dni" required />
+    <h2>Información de contacto</h2>
+    <label>Email</label>
+    <input ng-model="data.email" autocomplete="email" type="email" name="email"  />
+    <label>Teléfono</label>
+    <input ng-model="data.phone" autocomplete="tel-nacional" type="text" name="phone"  />
+    <h2>Expediente</h2>
+    <label>Grado</label>
+    <input ng-model="data.expedient.grade" type="text" name="grade"  />
+    <label>Año</label>
+    <input ng-model="data.expedient.age" type="number" name="age"  />
+    <label>Asignaturas</label>
+    <select multiple ng-model="data.expedient.subjects">
+        <option value="4234234">Llol</option>
+        <option ng-repeat="s in subjects" value="{{s._id}}">{{s.name}}</option>
+    </select>
+    <input type="submit" value="Enviar"/>
+</form>
+<div class="grid">
+    <div class="card g-3" ng-repeat="s in students">
+        <h1>{{s.name}} {{s.surnames}}</h1>
+        <div> {{s.dni}}</div>
+        <h2>Contacto</h2>
+        <div>{{s.phone}}</div>
+        <div>{{s.email}}</div>
+        <div class="card-footer">
+            <div class="card-footer-left">
+                <a class="button" href="student/{{s._id}}/edit">Editar</a>
+            </div>
+            <div class="card-footer-right">
+                <a class="button" href="#" ng-click="delete(s._id)">Borrar</a>
+            </div>
+        </div>
+    </div>
+</div>
