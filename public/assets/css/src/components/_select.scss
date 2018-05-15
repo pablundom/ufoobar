@@ -1,0 +1,36 @@
+.select{
+  margin:10px;
+  border-bottom:2px solid tint($color_1_base,50);
+  background-color:tint($color_3_base,90) ;
+  position: relative;
+  z-index:2;
+    a{
+      @extend %gridable;
+      color:tint($color_1_base,10);
+      padding:12px;
+      .first{
+        @extend .g-11;
+      }
+      i{
+        @extend .g-1;
+      }
+    }
+  .options{
+    border:1px solid $color_1_base;
+    background-color: $color_2_base;
+    position: absolute;
+    left:0;
+    box-shadow: box-shadow('medium');
+    width:100%;
+    top:0;
+    .option{
+      background-color: $color_2_base;
+      padding:15px;
+      display: block;
+      color:tint($color_1_base,10);
+      &:hover{
+        background-color: tint($color_3_base,90);
+      }
+    }
+  }
+}

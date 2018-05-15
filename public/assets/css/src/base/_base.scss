@@ -1,0 +1,22 @@
+
+body{
+  padding:0;
+  font-family: $font_family;
+  margin:0;
+  font-size:1.25em;
+  background-color: $color_2_base;
+  color: $color_1_base;
+}
+
+ul{
+  @extend %nomarginnopadding;
+  li{
+    list-style: none;
+  }
+}
+
+button{
+  @extend .button;
+  outline: none;
+  border:0;
+}

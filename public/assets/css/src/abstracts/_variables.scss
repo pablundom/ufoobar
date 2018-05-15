@@ -1,0 +1,21 @@
+
+/* Black*/
+$color_1_base: hsl(0, 0%, 0%);
+/* white */
+$color_2_base: hsl(360, 100%, 100%);
+/** Ink */
+$color_3_base: hsl(280, 67%, 29%);
+/* Posy */
+$color_4_base: hsl(168, 15%, 44%);
+/* Embers */
+$color_5_base: hsl(25, 27%, 61%);
+
+$font_family: 'Open Sans', sans-serif;
+
+/** Media query */
+
+$breakpoints: (
+        'medium': (min-width: 800px),
+        'large': (min-width: 1000px),
+        'huge': (min-width: 1200px),
+);

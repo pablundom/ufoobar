@@ -1,0 +1,23 @@
+.dialog-overlay{
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top:0;
+  left:0;
+  background-color: rgba(0,0,0,0.5);
+  z-index:10;
+
+}
+
+.dialog-content{
+  box-shadow: box-shadow("medium");
+  padding:15px;
+  max-width:60vw;
+  max-height: 100vh;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  z-index:15;
+}

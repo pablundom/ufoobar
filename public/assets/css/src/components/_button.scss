@@ -1,0 +1,34 @@
+.button{
+  box-shadow: box-shadow('soft');
+  padding: 12px 24px;
+  font-size: 0.8em;
+  margin:10px;
+  border-radius: 2px;
+  display: inline-block;
+  background-color: tint($color_3_base,30);
+  color:$color_2_base !important;
+  transition: all 0.2s ease-in-out;
+  cursor:pointer;
+  &:hover, &:active {
+    box-shadow: box-shadow('medium');
+    background-color: tint($color_3_base,10);
+  }
+}
+
+.btn-alert{
+  background-color: tint($color_5_base,30);
+  color:white;
+  &:hover{
+    background-color: tint($color_5_base,30);
+    color:white;
+  }
+}
+
+.btn-grey{
+  background-color: tint($color_1_base,50);
+  color:white;
+  &:hover{
+    background-color: tint($color_1_base,50);
+    color:white;
+  }
+}

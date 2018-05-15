@@ -1,0 +1,14 @@
+{
+  "name": "cbdangular",
+  "version": "1.0.0",
+  "description": "Implementation of a Example using Mongo",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0"
+  },
+  "dependencies": {
+    "grunt-concat-json": "0.0.10"
+  }
+}

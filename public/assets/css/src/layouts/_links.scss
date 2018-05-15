@@ -1,0 +1,10 @@
+a{
+  text-decoration: none;
+  color: tint($color_5_base,20);
+  &:visited{
+    color: tint($color_5_base,20);
+  }
+  &:hover{
+    color: tint($color_3_base,40);
+  }
+}

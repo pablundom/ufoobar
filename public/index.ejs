@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Universidad Foo Bar</title>
+    <base href="<%= url %>">
+    <link href="assets/css/style.css" rel="stylesheet"/>
+    <script src="vendor/angular.js"></script>
+    <script src="vendor/angular-route.min.js"></script>
+    <script src="vendor/jquery.min.js"></script>
+    <script src="dist/app.js"></script>
+</head>
+<body ng-app="App">
+<main>
+    <header>
+        <div class="header-title">
+            <a  href=""><img src="assets/images/title.png"/> Universidad Foo Bar</a>
+        </div>
+        <nav>
+            <a href="students">Alumnos</a>
+            <a href="subjects">Asignaturas</a>
+            <a href="exams">Examenes</a>
+        </nav>
+    </header>
+    <section ng-view></section>
+</main>
+</body>
+</html>

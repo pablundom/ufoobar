@@ -1,0 +1,22 @@
+form{
+  border-radius:3px;
+  border:1px solid tint($color_4_base,70);
+  padding:10px;
+}
+
+input{
+  padding:15px 15px;
+  font-size:0.9em;
+  outline: 0;
+  border:0;
+  margin:10px;
+  background-color:tint($color_3_base,90) ;
+}
+
+label{
+  display:block;
+}
+
+input[type=submit]{
+  @extend %block,.button ;
+}

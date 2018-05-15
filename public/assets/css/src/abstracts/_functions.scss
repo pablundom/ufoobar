@@ -1,0 +1,29 @@
+/// Aclarar ligeramente un color
+/// @access public
+/// @param {Color} $color - color a matizar
+/// @param {Number} $percentage - porcentaje del `$color` que debe ser devuelto
+/// @return {Color}
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+/// Oscurecer ligeramente un color
+/// @access public
+/// @param {Color} $color - color a oscurecer
+/// @param {Number} $percentage - porcentaje de `$color` que debe ser devuelto
+/// @return {Color}
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+@function box-shadow($size){
+  @if $size=='soft'{
+    @return 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
+  @if $size =='medium'{
+    @return 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  }
+  @if $size =='large'{
+    @return 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+}

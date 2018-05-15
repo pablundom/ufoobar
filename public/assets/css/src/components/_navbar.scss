@@ -1,0 +1,15 @@
+.navbar{
+  @extend %gridable;
+  grid-column-gap: 1%;
+  font-size:1.2em;
+  a{
+    color: $color_1_base;
+    padding:15px;
+    border-bottom: 4px solid $color_4_base;
+    transition: background-color, border-bottom-color 0.2s ease-in-out;
+    &:hover{
+      background-color: tint($color_4_base,75);
+      border-bottom: 4px solid $color_2_base;
+    }
+  }
+}

@@ -1,0 +1,67 @@
+main{
+  display: grid;
+  grid-template-columns: auto;
+}
+header{
+  padding:30px;
+  color:$color_2_base;
+  background-color: tint($color_3_base,10);
+  grid-template-columns: repeat(12, 1fr);
+  display: grid;
+  .header-title{
+    @extend .g-4;
+    img{
+      text-align: center;
+      width:32px;
+    }
+    a{
+      font-size:1.4em;
+      color:$color_2_base;
+      &:hover{
+        color:$color_2_base;
+      }
+      @include underline($color_2_base);}
+
+  }
+}
+article{
+  padding:18px;
+}
+section{
+  padding:18px;
+}
+nav{
+  @extend .g-8;
+      a,a:visited{
+        color: $color_2_base;
+        padding:10px;
+        transition: all 0.3s ease-in-out;
+        &:hover{
+          background-color: tint($color_3_base,30);
+          border-radius: 15px;
+          color:$color_2_base;
+        }
+      }
+
+}
+
+.boxes{
+  @extend %gridable;
+  .box{
+    @extend .g-4;
+    box-shadow: box-shadow("medium");
+    background-color: tint($color_3_base,90);
+    margin:15px;
+    padding:15px;
+    border-radius:2px;
+    a{
+      padding:8px;
+      display: block;
+      color: shade($color_4_base,50);
+      transition: all 0.2s ease-in-out;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+}

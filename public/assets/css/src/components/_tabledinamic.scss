@@ -1,0 +1,29 @@
+
+.table-dinamic{
+  thead{
+    tr{
+      td{
+        cursor: pointer;
+      }
+    }
+  }
+  tbody tr{
+    transition: 0.15s all ease-in-out;
+    td{
+      cursor:pointer;
+      }
+    &:hover{
+      background-color: tint($color_4_base,80);
+    }
+  }
+  .selected-row{
+    background-color: tint($color_4_base,60);
+    &:hover{
+      background-color: tint($color_4_base,60);
+    }
+  }
+}
+
+.td-active{
+
+}
