@@ -1,0 +1,25 @@
+<h1>Asignaturas</h1>
+
+<p ng-show="subjects.length==0">Ups...No hay asignaturas por ahora... <a href="subject/add">Añade una</a> </p>
+<table ng-show="subjects.length>0">
+    <thead>
+    <tr>
+        <td>Nombre</td>
+        <td>Profesor</td>
+        <td>Departamento</td>
+        <td>Examenes</td>
+        <td>Alumnos</td>
+        <td>Borrar</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="s in subjects">
+        <td>{{s.name}}</td>
+        <td>{{s.professor}}</td>
+        <td>{{s.departament}}</td>
+        <td><a class="button" href="subject/{{s._id}}/examns">Ver</a> </td>
+        <td><a class="button" href="subject/{{s.id}}/students">Ver</a> </td>
+        <td><a class="button" href="" ng-click="delete(s._id)">Borrar</a> </td>
+    </tr>
+    </tbody>
+</table>

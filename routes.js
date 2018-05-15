@@ -6,6 +6,9 @@ router.get('/', function(req, res) {
     res.render("index", {url: fullUrl});
 });
 
-
+router.get('*',function (req, res) {
+    let fullUrl = req.protocol + '://' + req.get('host')+"/";
+    res.render("index", {url: fullUrl});
+});
 
 module.exports = router;
