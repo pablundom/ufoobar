@@ -1,1 +1,1 @@
-let app = angular.module("App", ["ngRoute"]);
+let app = angular.module("App", ["ngRoute","angular-loading-bar","ngAnimate"]);

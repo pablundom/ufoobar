@@ -1,0 +1,32 @@
+<form ng-model="data" class="grid" ng-submit="submit(data);addStudent=false;data={};">
+    <div class="g-4">
+
+    <label>Nombre</label>
+    <input ng-model="data.name" autocomplete="given-name" type="text" name="name" required />
+    <label>Apellidos</label>
+    <input ng-model="data.surnames" autocomplete="family-name" type="text" name="surnames" required />
+    <label>DNI</label>
+    <input ng-model="data.dni" type="text" name="dni" required />
+    </div>
+    <div class="g-4">
+
+
+    <h2>Información de contacto</h2>
+    <label>Email</label>
+    <input ng-model="data.email" autocomplete="email" type="email" name="email"  />
+    <label>Teléfono</label>
+    <input ng-model="data.phone" autocomplete="tel-nacional" type="text" name="phone"  />
+    </div>
+    <div class="g-4">
+    <h2>Expediente</h2>
+    <label>Grado</label>
+    <input ng-model="data.expedient.grade" type="text" name="grade"  />
+    <label>Año</label>
+    <input ng-model="data.expedient.age" type="text" name="age"  />
+    <label>Asignaturas</label>
+    <select multiple ng-model="data.expedient.subjects">
+        <option ng-repeat="s in subjects" value="{{s._id}}">{{s.name}}</option>
+    </select>
+    </div>
+    <input type="submit" value="Enviar"/>
+</form>

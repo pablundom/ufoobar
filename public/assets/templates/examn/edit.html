@@ -1,0 +1,13 @@
+<form ng-model="data"  ng-submit="submit(data);addExamn=false;data={};">
+    <label>Titulo</label>
+    <input ng-model="data.title" type="text" name="title" required />
+    <label>Fecha</label>
+   <input type="datetime-local" ng-model="data.date" required/>
+    <div ng-hide="editing==true">
+    <label>Asignatura</label>
+    <select required ng-model="data.subject">
+        <option ng-repeat="s in subjects" value="{{s._id}}" ng-selected="(s.name===data.subject) ? 'selected' :'' ">{{s.name}}</option>
+    </select>
+        </div>
+    <input type="submit" value="Enviar"/>
+</form>

@@ -11,4 +11,6 @@ router.get('*',function (req, res) {
     res.render("index", {url: fullUrl});
 });
 
+
+
 module.exports = router;

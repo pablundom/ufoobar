@@ -54,14 +54,8 @@ nav{
     margin:15px;
     padding:15px;
     border-radius:2px;
-    a{
-      padding:8px;
-      display: block;
-      color: shade($color_4_base,50);
-      transition: all 0.2s ease-in-out;
-      &:hover{
-        text-decoration: underline;
-      }
+    h3{
+      font-size:1.3em;
     }
   }
 }

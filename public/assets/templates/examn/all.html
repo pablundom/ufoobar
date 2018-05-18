@@ -1,0 +1,27 @@
+<h1>{{title}}</h1>
+
+<a class="block button" ng-click="addExamn=!addExamn">Añadir</a>
+<span ng-show="addExamn" ng-include="'assets/templates/examn/edit.html'"></span>
+
+<table ng-show="examns.length>0">
+    <thead>
+    <tr>
+        <td>Título</td>
+        <td>Fecha</td>
+        <td>Asignatura</td>
+        <td>Notas</td>
+        <td>Editar</td>
+        <td>Borrar</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="s in examns">
+        <td>{{s.title}}</td>
+        <td>{{s.date}}</td>
+        <td>{{s.subject}}</td>
+        <td><a class="button" href="examn/{{s._id}}/marks">Ver</a> </td>
+        <td><a class="button" href="examn/{{s._id}}/edit" >Editar</a> </td>
+        <td><a class="button" href="" ng-click="delete(s._id)">Borrar</a> </td>
+    </tr>
+    </tbody>
+</table>

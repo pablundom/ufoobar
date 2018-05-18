@@ -14,7 +14,7 @@ app.set('views', path.join(__dirname, '/public'));
 app.use(bodyParser.json());
 
 // Declaracion de namespaces de rutas
-app.use('/api',api);
+app.use(api);
 app.use('/',router);
 
 

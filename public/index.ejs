@@ -8,18 +8,21 @@
     <script src="vendor/angular.js"></script>
     <script src="vendor/angular-route.min.js"></script>
     <script src="vendor/jquery.min.js"></script>
+    <script src="vendor/loading-bar.min.js"></script>
+    <script src="vendor/angular-animate.min.js"></script>
     <script src="dist/app.js"></script>
+
 </head>
 <body ng-app="App">
 <main>
     <header>
         <div class="header-title">
-            <a  href=""><img src="assets/images/title.png"/> Universidad Foo Bar</a>
+            <a href="/"><img src="assets/images/title.png"/> Universidad Foo Bar</a>
         </div>
         <nav>
             <a href="students">Alumnos</a>
             <a href="subjects">Asignaturas</a>
-            <a href="exams">Examenes</a>
+            <a href="examns">Examenes</a>
         </nav>
     </header>
     <section ng-view></section>

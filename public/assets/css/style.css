@@ -1,4 +1,5 @@
 @import url(vendor/font-awesome/css/font-awesome.min.css);
+@import url(loading-bar.min.css);
 /* Black*/
 /* white */
 /** Ink */
@@ -83,11 +84,9 @@ button {
 
 a {
   text-decoration: none;
-  color: #c5ac9a; }
+  color: #9d429e; }
   a:visited {
-    color: #c5ac9a; }
-  a:hover {
-    color: #9c74b0; }
+    color: #9d429e; }
 
 main {
   display: grid;
@@ -145,13 +144,8 @@ nav a, nav a:visited {
   margin: 15px;
   padding: 15px;
   border-radius: 2px; }
-  .boxes .box a {
-    padding: 8px;
-    display: block;
-    color: #30413d;
-    transition: all 0.2s ease-in-out; }
-    .boxes .box a:hover {
-      text-decoration: underline; }
+  .boxes .box h3 {
+    font-size: 1.3em; }
 
 table {
   width: 100%;
@@ -161,7 +155,7 @@ table {
 
 thead {
   border-radius: 5px;
-  background-color: #5f817a;
+  background-color: #f06347;
   color: white; }
   thead tr td {
     padding: 15px; }
@@ -173,7 +167,7 @@ tbody tr:nth-child(odd) {
 
 form {
   border-radius: 3px;
-  border: 1px solid #cfd9d7;
+  border: 1px solid #fbd0c8;
   padding: 10px; }
 
 input {
@@ -196,10 +190,10 @@ label {
   .navbar a {
     color: black;
     padding: 15px;
-    border-bottom: 4px solid #5f817a;
+    border-bottom: 4px solid #f06347;
     transition: background-color, border-bottom-color 0.2s ease-in-out; }
     .navbar a:hover {
-      background-color: #d7e0de;
+      background-color: #fbd8d1;
       border-bottom: 4px solid white; }
 
 .button, button, input[type=submit] {
@@ -218,10 +212,10 @@ label {
     background-color: #6b2f88; }
 
 .btn-alert {
-  background-color: #ccb6a7;
+  background-color: #a95aaa;
   color: white; }
   .btn-alert:hover {
-    background-color: #ccb6a7;
+    background-color: #a95aaa;
     color: white; }
 
 .btn-grey {
@@ -263,11 +257,11 @@ label {
   .table-dinamic tbody tr td {
     cursor: pointer; }
   .table-dinamic tbody tr:hover {
-    background-color: #dfe6e4; }
+    background-color: #fce0da; }
 .table-dinamic .selected-row {
-  background-color: #bfcdca; }
+  background-color: #f9c1b5; }
   .table-dinamic .selected-row:hover {
-    background-color: #bfcdca; }
+    background-color: #f9c1b5; }
 
 .dialog-overlay {
   height: 100vh;
@@ -295,13 +289,13 @@ label {
   padding: 12px 24px;
   margin: 10px;
   border-radius: 2px;
-  background-color: #eff2f2;
+  background-color: #f3e7f3;
   transition: all 0.2s ease-in-out; }
   .card h1 {
     font-size: 1.5em;
     margin: 10px 0px; }
   .card:hover, .card:active {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    background-color: #dfe6e4; }
+    background-color: #e6d0e7; }
 
 /*# sourceMappingURL=style.css.map */

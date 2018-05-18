@@ -1,0 +1,26 @@
+<h1>{{title}}</h1>
+
+<a class="block button" href="#" ng-click="addMark=!addMark">Añadir Nota</a>
+<span ng-include="'assets/templates/mark/edit.html'"  ng-show="addMark" ></span>
+<table ng-show="marks.length>0">
+    <thead>
+    <tr>
+        <td>Alumno</td>
+        <td>Nota</td>
+        <td>Asignatura</td>
+        <td>Examen</td>
+        <td>Editar</td>
+        <td>Borrar</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="s in marks">
+        <td>{{s.student.name}} {{s.student.surnames}}</td>
+        <td>{{s.mark}}</td>
+        <td>{{s.subject}}</td>
+        <td>{{s.examn}}</td>
+        <td><a class="button" href="mark/{{s._id}}/edit?examn={{data.examn}}" >Editar</a> </td>
+        <td><a class="button" href="" ng-click="delete(s._id)">Borrar</a> </td>
+    </tr>
+    </tbody>
+</table>

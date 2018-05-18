@@ -1,0 +1,15 @@
+<form ng-model="data" ng-submit="submit(data);addMark=false;data={};">
+    <label>Student</label>
+    <div ng-show="!editing">
+        <select ng-model="data.student">
+            <option ng-repeat="s in students" value="{{s._id}}">{{s.name}} {{s.surnames}}</option>
+        </select>
+    </div>
+    <div ng-show="editing">
+        <b>{{data.student.name}} {{data.student.surnames}}</b>
+    </div>
+    <label>Nota</label>
+    <input ng-model="data.mark" type="number" name="mark" min="0" max="10" required />
+
+    <input type="submit" value="Enviar"/>
+</form>

@@ -2,15 +2,8 @@
 
 <p ng-show="subjects.length==0">Ups...No hay asignaturas por ahora... </p>
 <a class="block button" ng-click="addSubject=!addSubject">Añadir</a>
-<form ng-model="data" ng-show="addSubject" ng-submit="submit(data);addSubject=false;data={};">
-    <label>Nombre</label>
-    <input ng-model="data.name" type="text" name="name" required />
-    <label>Profesor</label>
-    <input ng-model="data.professor" type="text" name="professor" required />
-    <label>Departament</label>
-    <input ng-model="data.departament" type="text" name="departament" required />
-    <input type="submit" value="Enviar"/>
-</form>
+<span ng-show="addSubject" ng-include="'assets/templates/subject/edit.html'"></span>
+
 <table ng-show="subjects.length>0">
     <thead>
     <tr>
@@ -19,6 +12,7 @@
         <td>Departamento</td>
         <td>Examenes</td>
         <td>Alumnos</td>
+        <td>Editar</td>
         <td>Borrar</td>
     </tr>
     </thead>
@@ -28,7 +22,8 @@
         <td>{{s.professor}}</td>
         <td>{{s.departament}}</td>
         <td><a class="button" href="subject/{{s._id}}/examns">Ver</a> </td>
-        <td><a class="button" href="subject/{{s.id}}/students">Ver</a> </td>
+        <td><a class="button" href="subject/{{s._id}}/students">Ver</a> </td>
+        <td><a class="button" href="subject/{{s._id}}/edit" >Editar</a> </td>
         <td><a class="button" href="" ng-click="delete(s._id)">Borrar</a> </td>
     </tr>
     </tbody>
