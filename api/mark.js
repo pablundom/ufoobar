@@ -13,19 +13,16 @@ router.notFound = function (res,err,doc) {
 };
 
 router.get('/all', function(req, res) {
-    let result = [];
     let id = req.query.examn;
     subjects.findOne({"examns._id": id}).populate("examns.marks.student").exec(function (err,doc) {
         if (router.notFound(res,err,doc)) return true;
-        let examns = doc.examns;
         let marks = [];
-        examns.forEach((b)=>{
-            b = b.toObject();
-            b.marks.forEach((m)=>{
-                m.subject = doc.name;
-                m.examn = b.title;
-                marks.push(m);
-            })
+        let examn = doc.examns.id(id);
+        examn.marks.forEach((m)=>{
+            m = m.toObject();
+            m.subject = doc.name;
+            m.examn = examn.title;
+            marks.push(m);
         });
         res.json(marks);
     });
@@ -70,6 +67,7 @@ router.get('/:id', function(req, res) {
         if (router.notFound(res,err,doc)) return true;
         try{
             let examn = doc.examns.id(examnId);
+            console.log(doc);
             let mark = examn.marks.id(id);
             res.send(mark);
         } catch (E){
